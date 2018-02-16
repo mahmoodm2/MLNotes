@@ -452,34 +452,29 @@ def addone(a, l=0):
         a[l-1] += 1
     return a
 ###################################################################
-def subset(a, total):
-    print(a)
-    idx = [e for e in a if e==total]
+def subset(arr, total):
+    print(arr)
+    idx = [e for e in arr if e==total]
     if len(idx) == 1 : return idx
     
-    if len(a) > 1:
-        fe= a[0]
-        a.remove(fe)
-        re = subset(a, total - fe)
+    if len(arr) > 1:
+        fe= arr[0]
+        arr.remove(fe)
+        re = subset(arr, total - fe)
     else:
-        return a[0]
+        return arr[0]
     return re.append(fe) 
+###########################################
+def equal_subsets(arr):
 
-    while s < ts and c < len(a):
-            s +=a[c]
-            s1.append(a[c])
-            c+=1
-###################################################################
-def equal_subsets(a):
-
-    ts = sum(a) 
+    ts = sum(arr) 
     if ts % 2 != 0: return False
     ts = ts //2
     print(ts)
 
-    s1= subset(a , ts)
+    s1= subset(arr , ts)
 
-    s2=[e for e in a if e not in s1]
+    s2=[e for e in arr if e not in s1]
     if sum(s2) == ts:
         return s1,s2
     else: return False
@@ -961,11 +956,6 @@ private int expandAroundCenter(String s, int left, int right) {
     return R - L - 1;
 }
 '''
-###################################################################
-def firstNoneDuplicate2(s):
-    chars = [False for _ in xrange(len(s))]
-
-    return
 ###################################################################  
 def  removeStr( s , chrlist):
 
